@@ -3,7 +3,7 @@ from app import db
 
 class Entry(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    word = db.Column(db.String(64), index=True)
+    word = db.Column(db.String(64), unique=True, index=True)
     example = db.Column(db.String(120), index=True)
     user_name = db.Column(
         db.String(50),

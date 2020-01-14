@@ -32,6 +32,20 @@ class Entry(Resource):
 
         return {"message": "sucessful"}, 201
 
+    @use_kwargs(EntrySchema)
+    def delete(self, word, example, user_name):
+        entry = E.query.filter_by(
+            user_name=user_name,
+            word=word,
+            example=example
+        ).one()
+
+        from app import db
+        db.session.delete(entry)
+        db.session.commit()
+
+        return {"message": "sucessful"}, 201
+
     # Get all the entries that match a user.
     @use_args(args)
     def get(self, args):
