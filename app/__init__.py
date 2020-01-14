@@ -23,11 +23,12 @@ api_bp = Blueprint("api", __name__)
 api = Api(api_bp)
 
 from app.resources.ping import Ping
-from app.resources.entry import Entry
+from app.resources.entry import Entry, Entries
 from app.resources.user import User
 
 api.add_resource(Ping, "/ping")
 api.add_resource(Entry, "/entry")
+api.add_resource(Entries, "/entries")
 api.add_resource(User, "/user")
 
 app.register_blueprint(api_bp, url_prefix="/api")
