@@ -1,2 +1,18 @@
 * Front-End: ReactJS 
 * Back-End: Python Flask RESTFul API
+
+  
+** Start the backend of the app:
+   Go to the app/ folder. Run the following command:
+
+   pip install -r requirements.txt
+   export FLASK_APP="routes.py"
+   flask db init
+   flask db migrate
+   flask db upgrade
+   flask run
+
+** Start the front of the app:
+   Go to the frontend/ folder. Run the following command:
+   npm install
+   npm start
