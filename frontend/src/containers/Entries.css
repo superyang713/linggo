@@ -1,0 +1,11 @@
+@media all and (min-width: 480px) {
+    .Entries {
+        padding: 60px 20px;
+        margin: 3rem auto;
+        max-width: 640px;
+    }
+
+    .Item {
+        max-width: 500px;
+    }
+}
