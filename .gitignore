@@ -3,3 +3,5 @@ migrations/
 __init__.pyc
 app.db
 
+node_modules/
+

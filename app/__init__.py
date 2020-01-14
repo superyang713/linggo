@@ -3,6 +3,7 @@ from flask_restful import Api
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_marshmallow import Marshmallow
+from flask_cors import CORS, cross_origin
 
 from app.config import Config, ConfigDb
 
@@ -11,6 +12,8 @@ app = Flask(__name__)
 
 app.config.from_object(Config)
 app.config.from_object(ConfigDb)
+
+CORS(app, support_credentials=True)
 
 db = SQLAlchemy(app)
 ma = Marshmallow(app)
